@@ -385,6 +385,9 @@ file      syscall/file_syscalls.c
 
 file      startup/main.c
 file      startup/menu.c
+# Lab3 Test code
+file      startup/hello.c
+
 
 ########################################
 #                                      #
@@ -441,7 +444,6 @@ file		test/fstest.c
 optfile net	test/nettest.c
 # UW Mod
 file    test/uw-tests.c
-
 
 # UW options for different assignments
 defoption A0

@@ -104,6 +104,8 @@ boot(void)
 	kprintf("Matthew Schroeder's awesome system version %s (%s #%d)\n", 
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
+	/* Lab 3 Say Hello */
+	sayhello();
 
 	/* Early initialization. */
 	ram_bootstrap();
