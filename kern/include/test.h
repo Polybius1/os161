@@ -92,4 +92,6 @@ void kmain(char *bootstring);
 /* Lab 3 hello.c */
 int sayhello(void);
 
+/* Lab 4 lab4test.c */
+int lab4test(int argc, char *argv[]);
 #endif /* _TEST_H_ */

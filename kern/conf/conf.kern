@@ -387,7 +387,8 @@ file      startup/main.c
 file      startup/menu.c
 # Lab3 Test code
 file      startup/hello.c
-
+#Lab4 Test code
+file      test/lab4test.c
 
 ########################################
 #                                      #
