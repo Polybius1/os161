@@ -1,4 +1,4 @@
-cscope 15 $HOME/os161               0000680322
+cscope 15 $HOME/os161               0000680689
 	@build/install/hostinclude/hostcompat.h
 
 31 
@@ -17925,7 +17925,7 @@ _OPT_SYNCHPROBS_H_
 
 2 c⁄° 
 	gbuûdvîsi⁄
- = 9;
+ = 11;
 
 3 c⁄° 
 	gbuûdc⁄fig
@@ -44829,6 +44829,14 @@ boŸ°rög
 ßyhñlo
 ();
 
+96 
+œb4ã°
+(
+¨gc
+, *
+¨gv
+[]);
+
 	@kern/include/thread.h
 
 30 #i‚de‡
@@ -52727,11 +52735,11 @@ OPT_NET
 UW
 
 
-477 
+478 
 NULL
 
 
-482 
+483 
 	$cmd_ã°míu
 (
 n
@@ -52739,53 +52747,53 @@ n
 a
 )
 
-484 ()
+485 ()
 n
 ;
 
-485 ()
+486 ()
 a
 ;
 
-487 
+488 
 	`showmíu
 ("OS/161Åe°†míu", 
 ã°míu
 );
 
-488 
+489 
 	`k¥ötf
 (" (1) TheseÅests will fail until you finishÅhe "
 
-490 
+491 
 	`k¥ötf
 (" (4) TheseÅests may fail until you finishÅhe "
 
-492 
+493 
 	`k¥ötf
 ("\n");
 
-495 
+496 
 	}
 }
 
-497 c⁄° *
+498 c⁄° *
 	gmaömíu
 [] = {
 
-500 #i‡
+501 #i‡
 OPT_SYNCHPROBS
 
 
-502 #ifde‡
+503 #ifde‡
 UW
 
 
-508 
+509 
 NULL
 
 
-513 
+514 
 	$cmd_maömíu
 (
 n
@@ -52793,29 +52801,29 @@ n
 a
 )
 
-515 ()
+516 ()
 n
 ;
 
-516 ()
+517 ()
 a
 ;
 
-518 
+519 
 	`showmíu
 ("OS/161 kî√»míu", 
 maömíu
 );
 
-520 
+521 
 	}
 }
 
-527 c⁄° *
+528 c⁄° *
 	m«me
 ;
 
-528 (*
+529 (*
 	mfunc
 )(
 	m«rgs
@@ -52823,193 +52831,197 @@ maömíu
 	m¨gs
 );
 
-529 } 
+530 } 
 	gcmdèbÀ
 [] = {
 
-531 { "?", 
+532 { "?", 
 cmd_maömíu
  },
 
-532 { "h", 
+533 { "h", 
 cmd_maömíu
  },
 
-533 { "hñp", 
+534 { "hñp", 
 cmd_maömíu
  },
 
-534 { "?o", 
+535 { "?o", 
 cmd_›smíu
  },
 
-535 { "?t", 
+536 { "?t", 
 cmd_ã°míu
  },
 
-538 { "s", 
+539 { "s", 
 cmd_shñl
  },
 
-539 { "p", 
+540 { "p", 
 cmd_¥og
  },
 
-540 { "mou¡", 
+541 { "mou¡", 
 cmd_mou¡
  },
 
-541 { "unmou¡", 
+542 { "unmou¡", 
 cmd_unmou¡
  },
 
-542 { "boŸfs", 
+543 { "boŸfs", 
 cmd_boŸfs
  },
 
-543 { "pf", 
+544 { "pf", 
 ¥ötfûe
  },
 
-544 { "cd", 
+545 { "cd", 
 cmd_chdú
  },
 
-545 { "pwd", 
+546 { "pwd", 
 cmd_pwd
  },
 
-546 { "sync", 
+547 { "sync", 
 cmd_sync
  },
 
-547 { "∑nic", 
+548 { "∑nic", 
 cmd_∑nic
  },
 
-548 { "q", 
+549 { "q", 
 cmd_quô
  },
 
-549 { "exô", 
+550 { "exô", 
 cmd_quô
  },
 
-550 { "hÆt", 
+551 { "hÆt", 
 cmd_quô
  },
 
-552 #i‡
+553 #i‡
 OPT_SYNCHPROBS
 
 
-554 { "•1", 
+555 { "•1", 
 whÆem©ög
  },
 
-555 #ifde‡
+556 #ifde‡
 UW
 
 
-556 { "•2", 
+557 { "•2", 
 ˇtmou£
  },
 
-561 { "kh", 
+562 { "kh", 
 cmd_khóp°©s
  },
 
-564 { "©", 
+565 { "©", 
 ¨øyã°
  },
 
-565 { "bt", 
+566 { "bt", 
 bôm≠ã°
  },
 
-566 { "km1", 
+567 { "km1", 
 mÆlo˘e°
  },
 
-567 { "km2", 
+568 { "km2", 
 mÆloc°ªss
  },
 
-568 #i‡
+569 #i‡
 OPT_NET
 
 
-569 { "√t", 
+570 { "√t", 
 √âe°
  },
 
-571 { "â1", 
+572 { "â1", 
 thªadã°
  },
 
-572 { "â2", 
+573 { "â2", 
 thªadã°2
  },
 
-573 { "â3", 
+574 { "â3", 
 thªadã°3
  },
 
-574 { "sy1", 
+575 { "sy1", 
 £mã°
  },
 
-577 { "sy2", 
+578 { "sy2", 
 lockã°
  },
 
-578 { "sy3", 
+579 { "sy3", 
 cvã°
  },
 
-579 #ifde‡
+580 #ifde‡
 UW
 
 
-580 { "uw1", 
+581 { "uw1", 
 uwlockã°1
  },
 
-581 { "uw2", 
+582 { "uw2", 
 uwvm°©°e°
  },
 
-585 { "fs1", 
+586 { "fs1", 
 f°e°
  },
 
-586 { "fs2", 
+587 { "fs2", 
 ªad°ªss
  },
 
-587 { "fs3", 
+588 { "fs3", 
 wrôe°ªss
  },
 
-588 { "fs4", 
+589 { "fs4", 
 wrôe°ªss2
  },
 
-589 { "fs5", 
+590 { "fs5", 
 ¸óã°ªss
  },
 
-591 { 
+591 { "l4t", 
+œb4ã°
+ },
+
+593 { 
 NULL
 , NULL }
 
-599 
+601 
 	$cmd_di•©ch
 (*
 cmd
 )
 
-601 
+603 
 time_t
  
 bef‹e£cs
@@ -53019,7 +53031,7 @@ a·î£cs
 £cs
 ;
 
-602 
+604 
 uöt32_t
  
 bef‹í£cs
@@ -53029,31 +53041,31 @@ a·în£cs
 n£cs
 ;
 
-603 *
+605 *
 ¨gs
 [
 MAXMENUARGS
 ];
 
-604 
+606 
 «rgs
 =0;
 
-605 *
+607 *
 w‹d
 ;
 
-606 *
+608 *
 c⁄ãxt
 ;
 
-607 
+609 
 i
 , 
 ªsu…
 ;
 
-609 
+611 
 w‹d
  = 
 	`°πok_r
@@ -53063,13 +53075,13 @@ cmd
 c⁄ãxt
 );
 
-610 
+612 
 w‹d
  !
 NULL
 ;
 
-611 
+613 
 w‹d
  = 
 	`°πok_r
@@ -53079,21 +53091,21 @@ NULL
 c⁄ãxt
 )) {
 
-613 i‡(
+615 i‡(
 «rgs
  >
 MAXMENUARGS
 ) {
 
-614 
+616 
 	`k¥ötf
 ("CommandÜine hasÅoo many words\n");
 
-615  
+617  
 E2BIG
 ;
 
-617 
+619 
 ¨gs
 [
 «rgs
@@ -53101,11 +53113,11 @@ E2BIG
 w‹d
 ;
 
-620 i‡(
+622 i‡(
 «rgs
 ==0) {
 
-624 
+626 
 i
 =0; 
 cmdèbÀ
@@ -53113,7 +53125,7 @@ cmdèbÀ
 «me
 ; i++) {
 
-625 i‡(*
+627 i‡(*
 cmdèbÀ
 [
 i
@@ -53125,7 +53137,7 @@ i
 ¨gs
 [0], cmdtable[i].name)) {
 
-626 
+628 
 	`KASSERT
 (
 cmdèbÀ
@@ -53137,7 +53149,7 @@ func
 NULL
 );
 
-628 
+630 
 	`gëtime
 (&
 bef‹e£cs
@@ -53145,7 +53157,7 @@ bef‹e£cs
 bef‹í£cs
 );
 
-630 
+632 
 ªsu…
  = 
 cmdèbÀ
@@ -53159,7 +53171,7 @@ i
 ¨gs
 );
 
-632 
+634 
 	`gëtime
 (&
 a·î£cs
@@ -53167,7 +53179,7 @@ a·î£cs
 a·în£cs
 );
 
-633 
+635 
 	`gëöãrvÆ
 (
 bef‹e£cs
@@ -53175,49 +53187,49 @@ bef‹e£cs
 bef‹í£cs
 ,
 
-634 
+636 
 a·î£cs
 , 
 a·în£cs
 ,
 
-635 &
+637 &
 £cs
 , &
 n£cs
 );
 
-637 
+639 
 	`k¥ötf
 ("OperationÅook %lu.%09lu seconds\n",
 
-638 (Ë
+640 (Ë
 £cs
 ,
 
-639 (Ë
+641 (Ë
 n£cs
 );
 
-641  
+643  
 ªsu…
 ;
 
-645 
+647 
 	`k¥ötf
 ("%s: Comm™dÇŸ found\n", 
 ¨gs
 [0]);
 
-646  
+648  
 EINVAL
 ;
 
-647 
+649 
 	}
 }
 
-658 
+660 
 	$míu_execuã
 (*
 löe
@@ -53225,19 +53237,19 @@ löe
 ißrgs
 )
 
-660 *
+662 *
 comm™d
 ;
 
-661 *
+663 *
 c⁄ãxt
 ;
 
-662 
+664 
 ªsu…
 ;
 
-664 
+666 
 comm™d
  = 
 	`°πok_r
@@ -53247,13 +53259,13 @@ löe
 c⁄ãxt
 );
 
-665 
+667 
 comm™d
  !
 NULL
 ;
 
-666 
+668 
 comm™d
  = 
 	`°πok_r
@@ -53263,17 +53275,17 @@ NULL
 c⁄ãxt
 )) {
 
-668 i‡(
+670 i‡(
 ißrgs
 ) {
 
-669 
+671 
 	`k¥ötf
 ("OS/161 kî√l: %s\n", 
 comm™d
 );
 
-672 
+674 
 ªsu…
  = 
 	`cmd_di•©ch
@@ -53281,11 +53293,11 @@ comm™d
 comm™d
 );
 
-673 i‡(
+675 i‡(
 ªsu…
 ) {
 
-674 
+676 
 	`k¥ötf
 ("Míu comm™d faûed: %s\n", 
 	`°ªº‹
@@ -53293,51 +53305,51 @@ comm™d
 ªsu…
 ));
 
-675 i‡(
+677 i‡(
 ißrgs
 ) {
 
-676 
+678 
 	`∑nic
 ("FailureÖrocessing kernelárguments\n");
 
-680 
+682 
 	}
 }
 
-700 
+702 
 	$míu
 (*
 ¨gs
 )
 
-702 
+704 
 buf
 [64];
 
-704 
+706 
 	`míu_execuã
 (
 ¨gs
 , 1);
 
-707 
+709 
 	`k¥ötf
 ("OS/161 kernel [? for menu]: ");
 
-708 
+710 
 	`kgës
 (
 buf
 , (buf));
 
-709 
+711 
 	`míu_execuã
 (
 buf
 , 0);
 
-711 
+713 
 	}
 }
 
@@ -59804,6 +59816,66 @@ rv
 );
 
 646 
+	}
+}
+
+	@kern/test/lab4test.c
+
+6 
+	~<ty≥s.h
+>
+
+7 
+	~<lib.h
+>
+
+8 
+	~<ã°.h
+>
+
+10 
+	$œb4ã°
+(
+¨gc
+, *
+¨gv
+[]) {
+
+12 
+i
+ = 0;
+
+13 
+	`k¥ötf
+("\ncmdlöê¨g†cou¡=%d", 
+¨gc
+);
+
+16 
+	`k¥ötf
+("\√xê«me=%s", 
+¨gv
+[0]);
+
+18 
+i
+=1; i< 
+¨gc
+; i++) {
+
+19 
+	`k¥ötf
+("\«rg%d=%s", 
+i
+, 
+¨gv
+[i]);
+
+22 
+	`k¥ötf
+("\n");
+
+24 
 	}
 }
 
@@ -135573,8 +135645,8 @@ i
 1
 .
 0
-500
-14052
+501
+14073
 build/install/hostinclude/hostcompat.h
 build/install/include/assert.h
 build/install/include/err.h
@@ -135820,6 +135892,7 @@ kern/syscall/time_syscalls.c
 kern/test/arraytest.c
 kern/test/bitmaptest.c
 kern/test/fstest.c
+kern/test/lab4test.c
 kern/test/malloctest.c
 kern/test/nettest.c
 kern/test/synchtest.c

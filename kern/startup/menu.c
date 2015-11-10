@@ -113,7 +113,9 @@ cmd_progthread(void *ptr, unsigned long nargs)
 }
 
 /*
- * Common code for cmd_prog and cmd_shell.
+ * Common code for c#include <stdio.h>
+
+md_prog and cmd_shell.
  *
  * Note that this does not wait for the subprogram to finish, but
  * returns immediately to the menu. This is usually not what you want,
@@ -155,7 +157,7 @@ common_prog(int nargs, char **args)
 #ifdef UW
 	/* wait until the process we have just launched - and any others that it 
 	   may fork - is finished before proceeding */
-	P(no_proc_sem);
+P(no_proc_sem);
 #endif // UW
 
 	return 0;
