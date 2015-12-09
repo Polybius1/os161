@@ -60,6 +60,9 @@ int semtest(int, char **);
 int locktest(int, char **);
 int cvtest(int, char **);
 
+
+
+
 #ifdef UW
 /* Another thread and synchronization test */
 int uwlocktest1(int, char **);
@@ -94,4 +97,7 @@ int sayhello(void);
 
 /* Lab 4 lab4test.c */
 int lab4test(int argc, char *argv[]);
+
+/* Lab 5 threadfun.c */
+int lab5threadtest(int nargs, char **args);
 #endif /* _TEST_H_ */

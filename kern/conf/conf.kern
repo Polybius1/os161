@@ -389,6 +389,8 @@ file      startup/menu.c
 file      startup/hello.c
 #Lab4 Test code
 file      test/lab4test.c
+#Lab5 Test code
+file test/threadfun.c
 
 ########################################
 #                                      #
