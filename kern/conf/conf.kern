@@ -390,7 +390,12 @@ file      startup/hello.c
 #Lab4 Test code
 file      test/lab4test.c
 #Lab5 Test code
-file test/threadfun.c
+file test/threadfun2.c
+#Project 1 
+file test/threadstrings.c
+file test/unsafethread.c
+file test/lockthread.c
+file test/spinthread.c
 
 ########################################
 #                                      #

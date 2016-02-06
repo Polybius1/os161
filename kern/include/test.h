@@ -100,4 +100,21 @@ int lab4test(int argc, char *argv[]);
 
 /* Lab 5 threadfun.c */
 int lab5threadtest(int nargs, char **args);
+
+/* Project 1 string thread */
+int stringthreadtest(int nargs, char **args); 
+
+/* Project 1 unsafe thread test */
+int unsafetest(int nargs, char **args);
+
+/* Project 1 lock test */
+int lockthread(int nargs, char **args);
+
+/* Project 1 spinlock test */
+int spinthread(int nargs, char **args);
+
+
 #endif /* _TEST_H_ */
+
+
+
