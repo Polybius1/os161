@@ -113,6 +113,9 @@ int lockthread(int nargs, char **args);
 /* Project 1 spinlock test */
 int spinthread(int nargs, char **args);
 
+/* Project 1 binary semaphore test */
+int semthread(int nargs, char **args); 
+
 
 #endif /* _TEST_H_ */
 

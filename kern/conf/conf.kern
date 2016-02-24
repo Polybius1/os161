@@ -396,6 +396,7 @@ file test/threadstrings.c
 file test/unsafethread.c
 file test/lockthread.c
 file test/spinthread.c
+file test/semthread.c
 
 ########################################
 #                                      #

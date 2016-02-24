@@ -7,12 +7,12 @@
 #include <synch.h>
 #include <test.h>
 
-//static struct semaphore *tsem = NULL;
+static struct semaphore *tsem = NULL;
 
 int shared_counter = 0; //shared counter for threads to increment
 int counter_max = 100; //hard coded counter max
 
-/*static
+static
 void
 fun_sem(void)
 {
@@ -23,23 +23,24 @@ fun_sem(void)
 		}
 	}
 }
-*/
+
 static void mattthread(void *junk, unsigned long num) {
 	
 	(void)junk;
 	(void)num;
 
-	for(int i = 0; i < counter_max; i++) 
+	for(int i = 0; i < counter_max; i++) { 
 		shared_counter++;
+	}
 
 	//kprintf("%d \n", shared_counter);
-	//V(tsem);
+	V(tsem);
 
 }
 
 int unsafetest(int nargs, char **args) {
 		
-	//fun_sem();	
+	fun_sem();	
 	char name[16];
 	int i, result, numthreads;
 
@@ -61,9 +62,9 @@ int unsafetest(int nargs, char **args) {
 		}
 	}
 
-	/*for (i=0; i<numthreads; i++) {
+	for(i=0; i<numthreads; i++) {
 		P(tsem);
-	}*/
+	}
 	
 	kprintf("The shared counter is %d \n", shared_counter);
 	kprintf("The shared counter should be %d \n", counter_max * numthreads);

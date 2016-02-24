@@ -1,6 +1,3 @@
-/*
- * 
- */
 #include <types.h>
 #include <lib.h>
 #include <thread.h>
@@ -8,9 +5,9 @@
 #include <test.h>
 #include <spinlock.h>
 
-static struct semaphore *lock_sem = NULL; //lock implemented as semaphore
 static struct semaphore *tsem = NULL;		//semaphore for threads
 
+//spinlock methods for reference
 /*void spinlock_init(struct spinlock *lk);
 void spinlock_cleanup(struct spinlock *lk);
 
@@ -19,22 +16,10 @@ void spinlock_release(struct spinlock *lk);
 
 bool spinlock_do_i_hold(struct spinlock *lk);
 */
-
-static struct spinlock *lock;
+static struct spinlock the_lock;
 int spin_shared_counter = 0; //shared counter for threads to increment
 int spin_counter_max = 100; //hard coded counter max
 
-static
-void
-lock_sem_init(void)
-{
-	if (lock_sem==NULL) {
-		lock_sem = sem_create("lock_sem", 1); //lock is semaphore with initial value at 1
-		if (lock_sem == NULL) {
-			panic("threadtest: sem_create failed\n");
-		}
-	}
-}
 
 static
 void
@@ -48,17 +33,27 @@ tsem_init(void)
 	}
 }
 
+/*static void the_lock_init(void) {
+		if(the_lock == NULL) {
+		the_lock = spinlock_init(&the_lock);
+
+		if(the_lock == NULL) {
+			panic("spinlock test: spinlock_init failed\n");
+		}
+	}
+}*/
+
 static void mattthread(void *junk, unsigned long num) {
 	
 	(void)junk;
 	(void)num;
-
+	
 	for(int i = 0; i < spin_counter_max; i++) {
-		spinlock_acquire(lock);
+	
+		spinlock_acquire(&the_lock);
 		spin_shared_counter++; //critical section
-		spinlock_release(lock);
+		spinlock_release(&the_lock);	
 
-		
 	}
 
 	V(tsem);
@@ -66,20 +61,19 @@ static void mattthread(void *junk, unsigned long num) {
 
 int spinthread(int nargs, char **args) {
 	
-	spinlock_init(lock);
-	
-	spin_shared_counter = 0;	
-	lock_sem_init();	
-	tsem_init();
+	spinlock_init(&the_lock);					//initialize spinlock
+	spin_shared_counter = 0;					//initialize shared counter
+		
+	tsem_init();									//initialize thread semaphore
 	char name[16];
 	int i, result, numthreads;
 
-	if(nargs > 1) {
-		numthreads = atoi(args[1]);
+	if(nargs > 1) {								//if we have more than one arg
+		numthreads = atoi(args[1]);			//first arg is number of threads to spawn
 	} else numthreads = 10;
 
 	if(nargs > 2) 
-		spin_counter_max = atoi(args[2]);
+		spin_counter_max = atoi(args[2]);	//second arg is shared counter max
 	else spin_counter_max = 100;
 
 	for (i=0; i<numthreads; i++) {
@@ -99,9 +93,9 @@ int spinthread(int nargs, char **args) {
 	kprintf("The shared counter is %d \n", spin_shared_counter);
 	kprintf("The shared counter should be %d \n", spin_counter_max * numthreads);
 
-	sem_destroy(lock_sem);
-	sem_destroy(tsem);
-	void spinlock_cleanup(struct spinlock *lk);
+	//sem_destroy(tsem);
+	//spinlock_cleanup(&the_lock);
+	
 	return 0;
 }
 

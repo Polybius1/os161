@@ -7,23 +7,31 @@
 #include <synch.h>
 #include <test.h>
 
-static struct semaphore *lock_sem = NULL; //lock implemented as semaphore
+static struct lock *thelock = NULL; 
 static struct semaphore *tsem = NULL;		//semaphore for threads
 
-int shared_counter_lock = 0; //shared counter for threads to increment
-int counter_max_lock = 100; //hard coded counter max
+int shared_counterL = 0; //shared counter for threads to increment
+int counter_maxL = 100; //hard coded counter max
 
-static
-void
-lock_sem_init(void)
-{
-	if (lock_sem==NULL) {
-		lock_sem = sem_create("lock_sem", 1); //lock is semaphore with initial value at 1
-		if (lock_sem == NULL) {
-			panic("threadtest: sem_create failed\n");
-		}
-	}
-}
+//lock methods for reference
+//struct lock *lock_create(const char *name);
+//void lock_acquire(struct lock *);
+
+/*
+ * Operations:
+ *    lock_acquire - Get the lock. Only one thread can hold the lock at the
+ *                   same time.
+ *    lock_release - Free the lock. Only the thread holding the lock may do
+ *                   this.
+ *    lock_do_i_hold - Return true if the current thread holds the lock; 
+ *                   false otherwise.
+ *
+ * These operations must be atomic. You get to write them.
+ */
+//void lock_release(struct lock *);
+//bool lock_do_i_hold(struct lock *);
+//void lock_destroy(struct lock *);
+
 
 static
 void
@@ -37,15 +45,26 @@ tsem_init(void)
 	}
 }
 
+static void lock_init(void) {
+	if(thelock == NULL) {
+		thelock = lock_create("thelock");
+
+		if(thelock == NULL) {
+			panic("locktest: lock initialization failed\n");
+		}
+	}
+}
+
+
 static void mattthread(void *junk, unsigned long num) {
 	
 	(void)junk;
 	(void)num;
 
-	for(int i = 0; i < counter_max_lock; i++) {
-		P(lock_sem);
-		shared_counter_lock++; //critical section
-		V(lock_sem);
+	for(int i = 0; i < counter_maxL; i++) {
+		lock_acquire(thelock);
+		shared_counterL++; //critical section
+		lock_release(thelock);
 
 		
 	}
@@ -55,8 +74,8 @@ static void mattthread(void *junk, unsigned long num) {
 
 int lockthread(int nargs, char **args) {
 		
-	shared_counter_lock = 0;	
-	lock_sem_init();	
+	shared_counterL = 0;	
+	lock_init();
 	tsem_init();
 	char name[16];
 	int i, result, numthreads;
@@ -66,8 +85,8 @@ int lockthread(int nargs, char **args) {
 	} else numthreads = 10;
 
 	if(nargs > 2) 
-		counter_max_lock = atoi(args[2]);
-	else counter_max_lock = 100;
+		counter_maxL = atoi(args[2]);
+	else counter_maxL = 100;
 
 	for (i=0; i<numthreads; i++) {
 		snprintf(name, sizeof(name), "threadtest%d", i);
@@ -83,8 +102,11 @@ int lockthread(int nargs, char **args) {
 		P(tsem);
 	}
 	
-	kprintf("The shared counter is %d \n", shared_counter_lock);
-	kprintf("The shared counter should be %d \n", counter_max_lock * numthreads);
+	kprintf("The shared counter is %d \n", shared_counterL);
+	kprintf("The shared counter should be %d \n", counter_maxL * numthreads);
+
+	//lock_destroy(thelock);
+	//sem_destroy(tsem);
 
 	return 0;
 }
